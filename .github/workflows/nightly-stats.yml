@@ -1,0 +1,42 @@
+name: Nightly Statistics Update
+
+on:
+  schedule:
+    - cron: '0 0 * * *'  # 00:00 UTC daily
+  workflow_dispatch:       # allow manual runs
+
+permissions:
+  contents: write
+
+jobs:
+  update-stats:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run statistics extractor
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python extract_statistics.py
+
+      - name: Commit and push changes
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add README.md issues_per_month.csv issues_per_month.png
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+          else
+            git commit -m "chore: update statistics [skip ci]"
+            git push
+          fi
