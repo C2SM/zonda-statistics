@@ -2,7 +2,7 @@
 Extract statistics from zonda-requests
 
 <!-- STATS:START -->
-> **Generated:** 2026-06-18 01:11 UTC  
+> **Generated:** 2026-06-19 01:17 UTC  
 > **Repository:** [C2SM/zonda-request](https://github.com/C2SM/zonda-request)
 
 ---
@@ -11,23 +11,23 @@ Extract statistics from zonda-requests
 
 | Metric | Value |
 |--------|-------|
-| Total Issues | **2170** |
-| Open Issues | 135 (6.2%) |
-| Closed Issues | 2035 (93.8%) |
+| Total Issues | **2179** |
+| Open Issues | 120 (5.5%) |
+| Closed Issues | 2059 (94.5%) |
 | Unique Contributors | 312 |
 | Distinct Labels | 16 |
-| Total Label Assignments | 4307 |
+| Total Label Assignments | 4327 |
 | First Issue | 2025-05-05 |
-| Latest Issue | 2026-06-17 |
+| Latest Issue | 2026-06-18 |
 
 ## Label Statistics
 
 | Label | Count | % of All Issues |
 |-------|------:|----------------:|
-| `data request` | 2142 | 98.7% |
-| `completed` | 1636 | 75.4% |
-| `failed` | 337 | 15.5% |
-| `invalid` | 96 | 4.4% |
+| `data request` | 2151 | 98.7% |
+| `completed` | 1643 | 75.4% |
+| `failed` | 340 | 15.6% |
+| `invalid` | 97 | 4.5% |
 | `aborted` | 27 | 1.2% |
 | `submitted` | 23 | 1.1% |
 | `enhancement` | 10 | 0.5% |
@@ -47,12 +47,12 @@ Extract statistics from zonda-requests
 
 | State | Count | Percentage |
 |-------|------:|-----------:|
-| Closed | 2035 | 93.8% |
-| Open | 135 | 6.2% |
+| Closed | 2059 | 94.5% |
+| Open | 120 | 5.5% |
 
 ## Issue Resolution Time
 
-Based on **2035** closed issues.
+Based on **2059** closed issues.
 
 | Metric | Days |
 |--------|-----:|
@@ -63,9 +63,9 @@ Based on **2035** closed issues.
 
 | SLA Bucket | Count | % of Closed |
 |------------|------:|------------:|
-| Closed within 1 day | 241 | 11.8% |
-| Closed within 7 days | 1766 | 86.8% |
-| Closed within 30 days | 2021 | 99.3% |
+| Closed within 1 day | 241 | 11.7% |
+| Closed within 7 days | 1788 | 86.8% |
+| Closed within 30 days | 2045 | 99.3% |
 
 ## Top Contributors (by Issues Opened)
 
@@ -73,12 +73,12 @@ Based on **2035** closed issues.
 |-----:|------|-------:|-----------:|
 | 1 | [stelliom](https://github.com/stelliom) | 131 | 6.0% |
 | 2 | [janisklamt](https://github.com/janisklamt) | 67 | 3.1% |
-| 3 | [krishaizl](https://github.com/krishaizl) | 51 | 2.4% |
+| 3 | [krishaizl](https://github.com/krishaizl) | 51 | 2.3% |
 | 4 | [criess374](https://github.com/criess374) | 50 | 2.3% |
 | 5 | [AngeloCampanaleCMCC](https://github.com/AngeloCampanaleCMCC) | 47 | 2.2% |
 | 6 | [mjaehn](https://github.com/mjaehn) | 40 | 1.8% |
-| 7 | [donuhr](https://github.com/donuhr) | 37 | 1.7% |
-| 8 | [shirareznik](https://github.com/shirareznik) | 37 | 1.7% |
+| 7 | [shirareznik](https://github.com/shirareznik) | 38 | 1.7% |
+| 8 | [donuhr](https://github.com/donuhr) | 37 | 1.7% |
 | 9 | [LudovicoMattavelli](https://github.com/LudovicoMattavelli) | 36 | 1.7% |
 | 10 | [mm10525](https://github.com/mm10525) | 34 | 1.6% |
 | 11 | [maymeret](https://github.com/maymeret) | 34 | 1.6% |
@@ -91,8 +91,8 @@ Based on **2035** closed issues.
 
 | Year | Count | % of Total |
 |------|------:|-----------:|
-| 2025 | 1081 | 49.8% |
-| 2026 | 1089 | 50.2% |
+| 2025 | 1081 | 49.6% |
+| 2026 | 1098 | 50.4% |
 
 ## Issues per Month
 
@@ -102,7 +102,7 @@ Based on **2035** closed issues.
 
 | Metric | Value |
 |--------|-------|
-| Average Issues / Month | 155.0 |
+| Average Issues / Month | 155.6 |
 | Peak Month | 2026-05 — 233 issues |
 | Quietest Month | 2026-01 — 117 issues |
 | Months with Activity | 14 |
@@ -124,18 +124,18 @@ Based on **2035** closed issues.
 | 2026-03 | 178 |
 | 2026-04 | 189 |
 | 2026-05 | 233 |
-| 2026-06 | 212 |
+| 2026-06 | 221 |
 
 ## Issues by Day of Week (UTC)
 
 | Day | Count | % of Total |
 |-----|------:|-----------:|
-| Monday | 358 | 16.5% |
+| Monday | 358 | 16.4% |
 | Tuesday | 448 | 20.6% |
-| Wednesday | 446 | 20.6% |
-| Thursday | 384 | 17.7% |
+| Wednesday | 446 | 20.5% |
+| Thursday | 393 | 18.0% |
 | Friday | 294 | 13.5% |
-| Saturday | 101 | 4.7% |
+| Saturday | 101 | 4.6% |
 | Sunday | 139 | 6.4% |
 
 > Most issues are opened on **Tuesday**.
@@ -150,18 +150,18 @@ Based on **2035** closed issues.
 | 03:00 | 14 |
 | 04:00 | 10 |
 | 05:00 | 21 |
-| 06:00 | 48 |
+| 06:00 | 50 |
 | 07:00 | 98 |
 | 08:00 | 175 |
 | 09:00 | 246 |
-| 10:00 | 179 |
-| 11:00 | 174 |
-| 12:00 | 219 |
+| 10:00 | 180 |
+| 11:00 | 175 |
+| 12:00 | 220 |
 | 13:00 | 234 |
 | 14:00 | 234 |
 | 15:00 | 155 |
-| 16:00 | 96 |
-| 17:00 | 57 |
+| 16:00 | 99 |
+| 17:00 | 58 |
 | 18:00 | 63 |
 | 19:00 | 47 |
 | 20:00 | 32 |
@@ -175,11 +175,11 @@ Based on **2035** closed issues.
 
 | Labels | Count |
 |--------|------:|
-| `completed` + `data request` | 1617 |
-| `data request` + `failed` | 320 |
+| `completed` + `data request` | 1623 |
+| `data request` + `failed` | 322 |
 | `data request` + `invalid` | 96 |
 | `data request` + `submitted` | 22 |
-| `aborted` + `data request` | 22 |
+| `aborted` + `data request` | 21 |
 | `completed` + `data request` + `failed` | 8 |
 | `data request` + `discussion` + `failed` | 4 |
 | `completed` + `data request` + `testsuite` | 4 |
@@ -198,5 +198,5 @@ Based on **2035** closed issues.
 
 ---
 
-*Statistics generated by `extract_statistics.py` on 2026-06-18 01:11 UTC.*
+*Statistics generated by `extract_statistics.py` on 2026-06-19 01:17 UTC.*
 <!-- STATS:END -->
