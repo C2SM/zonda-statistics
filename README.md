@@ -2,7 +2,7 @@
 Extract statistics from zonda-requests
 
 <!-- STATS:START -->
-> **Generated:** 2026-06-20 01:07 UTC  
+> **Generated:** 2026-06-21 01:14 UTC  
 > **Repository:** [C2SM/zonda-request](https://github.com/C2SM/zonda-request)
 
 ---
@@ -11,25 +11,25 @@ Extract statistics from zonda-requests
 
 | Metric | Value |
 |--------|-------|
-| Total Issues | **2185** |
-| Open Issues | 94 (4.3%) |
-| Closed Issues | 2091 (95.7%) |
-| Unique Contributors | 313 |
+| Total Issues | **2199** |
+| Open Issues | 83 (3.8%) |
+| Closed Issues | 2116 (96.2%) |
+| Unique Contributors | 314 |
 | Distinct Labels | 16 |
-| Total Label Assignments | 4339 |
+| Total Label Assignments | 4367 |
 | First Issue | 2025-05-05 |
-| Latest Issue | 2026-06-19 |
+| Latest Issue | 2026-06-20 |
 
 ## Label Statistics
 
 | Label | Count | % of All Issues |
 |-------|------:|----------------:|
-| `data request` | 2157 | 98.7% |
-| `completed` | 1648 | 75.4% |
-| `failed` | 341 | 15.6% |
-| `invalid` | 97 | 4.4% |
+| `data request` | 2171 | 98.7% |
+| `completed` | 1657 | 75.4% |
+| `failed` | 341 | 15.5% |
+| `invalid` | 101 | 4.6% |
 | `aborted` | 27 | 1.2% |
-| `submitted` | 23 | 1.1% |
+| `submitted` | 24 | 1.1% |
 | `enhancement` | 10 | 0.5% |
 | `bug` | 9 | 0.4% |
 | `testsuite` | 8 | 0.4% |
@@ -47,41 +47,41 @@ Extract statistics from zonda-requests
 
 | State | Count | Percentage |
 |-------|------:|-----------:|
-| Closed | 2091 | 95.7% |
-| Open | 94 | 4.3% |
+| Closed | 2116 | 96.2% |
+| Open | 83 | 3.8% |
 
 ## Issue Resolution Time
 
-Based on **2091** closed issues.
+Based on **2116** closed issues.
 
 | Metric | Days |
 |--------|-----:|
-| Average | 7.6 |
+| Average | 7.7 |
 | Median | 7 |
 | Fastest | 0 |
 | Slowest | 185 |
 
 | SLA Bucket | Count | % of Closed |
 |------------|------:|------------:|
-| Closed within 1 day | 241 | 11.5% |
-| Closed within 7 days | 1802 | 86.2% |
-| Closed within 30 days | 2077 | 99.3% |
+| Closed within 1 day | 241 | 11.4% |
+| Closed within 7 days | 1809 | 85.5% |
+| Closed within 30 days | 2102 | 99.3% |
 
 ## Top Contributors (by Issues Opened)
 
 | Rank | User | Issues | % of Total |
 |-----:|------|-------:|-----------:|
 | 1 | [stelliom](https://github.com/stelliom) | 131 | 6.0% |
-| 2 | [janisklamt](https://github.com/janisklamt) | 67 | 3.1% |
+| 2 | [janisklamt](https://github.com/janisklamt) | 67 | 3.0% |
 | 3 | [krishaizl](https://github.com/krishaizl) | 51 | 2.3% |
 | 4 | [criess374](https://github.com/criess374) | 50 | 2.3% |
-| 5 | [AngeloCampanaleCMCC](https://github.com/AngeloCampanaleCMCC) | 48 | 2.2% |
+| 5 | [AngeloCampanaleCMCC](https://github.com/AngeloCampanaleCMCC) | 50 | 2.3% |
 | 6 | [mjaehn](https://github.com/mjaehn) | 40 | 1.8% |
 | 7 | [shirareznik](https://github.com/shirareznik) | 38 | 1.7% |
 | 8 | [donuhr](https://github.com/donuhr) | 37 | 1.7% |
 | 9 | [LudovicoMattavelli](https://github.com/LudovicoMattavelli) | 36 | 1.6% |
-| 10 | [mm10525](https://github.com/mm10525) | 34 | 1.6% |
-| 11 | [maymeret](https://github.com/maymeret) | 34 | 1.6% |
+| 10 | [mm10525](https://github.com/mm10525) | 34 | 1.5% |
+| 11 | [maymeret](https://github.com/maymeret) | 34 | 1.5% |
 | 12 | [jvicenciov](https://github.com/jvicenciov) | 33 | 1.5% |
 | 13 | [awyszogrodzki](https://github.com/awyszogrodzki) | 31 | 1.4% |
 | 14 | [kathaepp](https://github.com/kathaepp) | 29 | 1.3% |
@@ -91,8 +91,8 @@ Based on **2091** closed issues.
 
 | Year | Count | % of Total |
 |------|------:|-----------:|
-| 2025 | 1081 | 49.5% |
-| 2026 | 1104 | 50.5% |
+| 2025 | 1081 | 49.2% |
+| 2026 | 1118 | 50.8% |
 
 ## Issues per Month
 
@@ -102,8 +102,8 @@ Based on **2091** closed issues.
 
 | Metric | Value |
 |--------|-------|
-| Average Issues / Month | 156.1 |
-| Peak Month | 2026-05 — 233 issues |
+| Average Issues / Month | 157.1 |
+| Peak Month | 2026-06 — 241 issues |
 | Quietest Month | 2026-01 — 117 issues |
 | Months with Activity | 14 |
 
@@ -124,19 +124,19 @@ Based on **2091** closed issues.
 | 2026-03 | 178 |
 | 2026-04 | 189 |
 | 2026-05 | 233 |
-| 2026-06 | 227 |
+| 2026-06 | 241 |
 
 ## Issues by Day of Week (UTC)
 
 | Day | Count | % of Total |
 |-----|------:|-----------:|
-| Monday | 358 | 16.4% |
-| Tuesday | 448 | 20.5% |
-| Wednesday | 446 | 20.4% |
-| Thursday | 393 | 18.0% |
-| Friday | 300 | 13.7% |
-| Saturday | 101 | 4.6% |
-| Sunday | 139 | 6.4% |
+| Monday | 358 | 16.3% |
+| Tuesday | 448 | 20.4% |
+| Wednesday | 446 | 20.3% |
+| Thursday | 393 | 17.9% |
+| Friday | 300 | 13.6% |
+| Saturday | 115 | 5.2% |
+| Sunday | 139 | 6.3% |
 
 > Most issues are opened on **Tuesday**.
 
@@ -152,16 +152,16 @@ Based on **2091** closed issues.
 | 05:00 | 21 |
 | 06:00 | 50 |
 | 07:00 | 100 |
-| 08:00 | 176 |
-| 09:00 | 248 |
-| 10:00 | 180 |
+| 08:00 | 182 |
+| 09:00 | 252 |
+| 10:00 | 182 |
 | 11:00 | 175 |
 | 12:00 | 221 |
 | 13:00 | 234 |
 | 14:00 | 234 |
 | 15:00 | 155 |
-| 16:00 | 99 |
-| 17:00 | 58 |
+| 16:00 | 100 |
+| 17:00 | 59 |
 | 18:00 | 63 |
 | 19:00 | 47 |
 | 20:00 | 32 |
@@ -175,10 +175,10 @@ Based on **2091** closed issues.
 
 | Labels | Count |
 |--------|------:|
-| `completed` + `data request` | 1628 |
+| `completed` + `data request` | 1637 |
 | `data request` + `failed` | 323 |
-| `data request` + `invalid` | 96 |
-| `data request` + `submitted` | 22 |
+| `data request` + `invalid` | 100 |
+| `data request` + `submitted` | 23 |
 | `aborted` + `data request` | 21 |
 | `completed` + `data request` + `failed` | 8 |
 | `data request` + `discussion` + `failed` | 4 |
@@ -198,5 +198,5 @@ Based on **2091** closed issues.
 
 ---
 
-*Statistics generated by `extract_statistics.py` on 2026-06-20 01:07 UTC.*
+*Statistics generated by `extract_statistics.py` on 2026-06-21 01:14 UTC.*
 <!-- STATS:END -->
