@@ -1,0 +1,9 @@
+metric,value
+count,2227
+avg_days,7.7126
+median_days,7
+min_days,0
+max_days,185
+within_1d,253
+within_7d,1873
+within_30d,2212

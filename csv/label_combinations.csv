@@ -1,0 +1,26 @@
+labels,count
+completed + data request,1745
+data request + failed,339
+data request + invalid,140
+data request + submitted,25
+aborted + data request,21
+completed + data request + failed,8
+data request + discussion + failed,4
+aborted + completed + data request + testsuite,4
+aborted + completed + data request + failed,2
+bug + external bug,2
+data request + testsuite,2
+aborted + completed + data request,2
+completed + data request + discussion,2
+data request + failed + submitted,1
+completed + data request + discussion + failed,1
+aborted + data request + discussion,1
+enhancement + frontend + v2.1,1
+bug + frontend + v2.1,1
+enhancement + frontend + v2.0,1
+enhancement + frontend,1
+aborted + completed + data request + failed + testsuite,1
+completed + data request + testsuite,1
+backend + bug + v2.1,1
+enhancement + v2.2,1
+data request + failed + invalid,1

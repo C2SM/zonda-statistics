@@ -37,10 +37,26 @@ GITHUB_TOKEN = os.environ.get("GITHUB_TOKEN", "")
 # Set to None to include all issues.
 START_DATE = "2025-05-01"
 
-OUTPUT_DIR    = "."
-CSV_FILE      = os.path.join(OUTPUT_DIR, "issues_per_month.csv")
-PLOT_FILE     = os.path.join(OUTPUT_DIR, "issues_per_month.png")
-README_FILE   = os.path.join(OUTPUT_DIR, "README.md")
+OUTPUT_DIR  = "."
+CSV_DIR     = os.path.join(OUTPUT_DIR, "csv")
+PLOT_FILE   = os.path.join(OUTPUT_DIR, "issues_per_month.png")
+README_FILE = os.path.join(OUTPUT_DIR, "README.md")
+
+# Every table in the generated report is backed by its own CSV file. The
+# extractor writes raw data to these files first; generate_markdown() reads
+# them back in to build the report, so the CSVs are always the source of
+# truth behind README.md.
+CSV_OVERVIEW      = os.path.join(CSV_DIR, "overview.csv")
+CSV_LABELS        = os.path.join(CSV_DIR, "labels.csv")
+CSV_STATES        = os.path.join(CSV_DIR, "states.csv")
+CSV_RESOLUTION    = os.path.join(CSV_DIR, "resolution.csv")
+CSV_CONTRIBUTORS  = os.path.join(CSV_DIR, "contributors.csv")
+CSV_YEARLY        = os.path.join(CSV_DIR, "yearly.csv")
+CSV_MONTHLY       = os.path.join(CSV_DIR, "monthly.csv")
+CSV_WEEKDAY       = os.path.join(CSV_DIR, "weekday.csv")
+CSV_HOURLY        = os.path.join(CSV_DIR, "hourly.csv")
+CSV_LABEL_COMBOS  = os.path.join(CSV_DIR, "label_combinations.csv")
+CSV_TOP_LABELED   = os.path.join(CSV_DIR, "most_labeled_issues.csv")
 
 # Markers that wrap the auto-generated statistics block inside README.md.
 # Everything between these two lines is replaced on every run.
@@ -298,24 +314,114 @@ def issues_with_most_labels(issues: List[dict], top_n: int = 5) -> List[dict]:
 
 
 # ---------------------------------------------------------------------------
-# CSV + Plot
+# CSV persistence
+#
+# Every table that ends up in README.md is first written to its own CSV file
+# under csv/. generate_markdown() reads these files back in, so the CSVs are
+# always the authoritative data behind the report.
 # ---------------------------------------------------------------------------
 
-def save_csv(monthly: Dict[str, int]) -> None:
-    with open(CSV_FILE, "w", newline="", encoding="utf-8") as f:
+def _write_csv(path: str, header: List[str], rows: List[list]) -> None:
+    os.makedirs(CSV_DIR, exist_ok=True)
+    with open(path, "w", newline="", encoding="utf-8") as f:
         w = csv.writer(f)
-        w.writerow(["Month", "Issues"])
-        for month, count in monthly.items():
-            w.writerow([month, count])
-    print(f"CSV  → {CSV_FILE}")
+        w.writerow(header)
+        w.writerows(rows)
+
+
+def _read_csv(path: str) -> List[dict]:
+    with open(path, encoding="utf-8") as f:
+        return list(csv.DictReader(f))
+
+
+def save_all_csvs(
+    issues:         List[dict],
+    label_counts:   Counter,
+    user_counts:    Counter,
+    monthly:        Dict[str, int],
+    yearly:         Dict[int, int],
+    states:         Counter,
+    resolution:     Optional[dict],
+    weekday_counts: Dict[str, int],
+    hour_counts:    Dict[int, int],
+    combo_counts:   Counter,
+    top_labeled:    List[dict],
+    generated_at:   str,
+) -> None:
+    total        = len(issues)
+    open_count   = states.get("open", 0)
+    closed_count = states.get("closed", 0)
+    all_dates    = [i["created_at"][:10] for i in issues if i.get("created_at")]
+    first_date   = min(all_dates) if all_dates else ""
+    last_date    = max(all_dates) if all_dates else ""
+    no_label     = sum(1 for i in issues if not i.get("labels"))
+
+    _write_csv(CSV_OVERVIEW, ["metric", "value"], [
+        ["generated_at", generated_at],
+        ["total_issues", total],
+        ["open_issues", open_count],
+        ["closed_issues", closed_count],
+        ["unique_contributors", len(user_counts)],
+        ["distinct_labels", len(label_counts)],
+        ["total_label_assignments", sum(label_counts.values())],
+        ["first_issue_date", first_date],
+        ["latest_issue_date", last_date],
+        ["unlabeled_issues", no_label],
+    ])
+
+    _write_csv(CSV_LABELS, ["label", "count"],
+               [[label, count] for label, count in label_counts.most_common()])
+
+    _write_csv(CSV_STATES, ["state", "count"],
+               [[state, count] for state, count in states.most_common()])
+
+    if resolution:
+        r = resolution
+        _write_csv(CSV_RESOLUTION, ["metric", "value"], [
+            ["count", r["count"]],
+            ["avg_days", f"{r['avg_days']:.4f}"],
+            ["median_days", r["median_days"]],
+            ["min_days", r["min_days"]],
+            ["max_days", r["max_days"]],
+            ["within_1d", r["within_1d"]],
+            ["within_7d", r["within_7d"]],
+            ["within_30d", r["within_30d"]],
+        ])
+    elif os.path.exists(CSV_RESOLUTION):
+        os.remove(CSV_RESOLUTION)
+
+    _write_csv(CSV_CONTRIBUTORS, ["user", "issues"],
+               [[user, count] for user, count in user_counts.most_common()])
+
+    _write_csv(CSV_YEARLY, ["year", "count"],
+               [[year, count] for year, count in yearly.items()])
+
+    _write_csv(CSV_MONTHLY, ["month", "count"],
+               [[month, count] for month, count in monthly.items()])
+
+    _write_csv(CSV_WEEKDAY, ["day", "count"],
+               [[day, count] for day, count in weekday_counts.items()])
+
+    _write_csv(CSV_HOURLY, ["hour", "count"],
+               [[f"{hour:02d}", count] for hour, count in hour_counts.items()])
+
+    _write_csv(CSV_LABEL_COMBOS, ["labels", "count"],
+               [[" + ".join(combo), count] for combo, count in combo_counts.most_common()])
+
+    _write_csv(CSV_TOP_LABELED, ["issue", "title", "labels", "url"], [
+        [i.get("number", ""), (i.get("title") or "")[:70],
+         len(i.get("labels", [])), i.get("html_url", "")]
+        for i in top_labeled if i.get("labels")
+    ])
+
+    print(f"CSV  → {CSV_DIR}/")
 
 
 def create_monthly_plot(csv_path: str) -> None:
     months, counts = [], []
-    with open(csv_path, encoding="utf-8") as f:
-        for row in csv.DictReader(f):
-            months.append(row["Month"])
-            counts.append(int(row["Issues"]))
+    for row in _read_csv(csv_path):
+        months.append(row["month"])
+        counts.append(int(row["count"]))
 
     fig_w = max(16, len(months) * 0.45)
     fig, ax = plt.subplots(figsize=(fig_w, 7))
@@ -357,33 +463,25 @@ def create_monthly_plot(csv_path: str) -> None:
 
 # ---------------------------------------------------------------------------
 # Markdown report
+#
+# Everything below is read back from csv/ rather than passed in as Python
+# objects, so the CSVs are the sole source of truth for the report.
 # ---------------------------------------------------------------------------
 
-def generate_markdown(
-    issues:         List[dict],
-    label_counts:   Counter,
-    user_counts:    Counter,
-    monthly:        Dict[str, int],
-    yearly:         Dict[int, int],
-    states:         Counter,
-    resolution:     Optional[dict],
-    weekday_counts: Dict[str, int],
-    hour_counts:    Dict[int, int],
-    combo_counts:   Counter,
-) -> None:
-    total   = len(issues)
-    now     = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC")
+def generate_markdown() -> None:
+    overview = {row["metric"]: row["value"] for row in _read_csv(CSV_OVERVIEW)}
+    total    = int(overview["total_issues"])
     repo_url = f"https://github.com/{REPO_OWNER}/{REPO_NAME}"
 
     def trow(label, count, pct_of=None):
         denom = pct_of if pct_of is not None else total
-        return f"| {label} | {count} | {_pct(count, denom)} |"
+        return f"| {label} | {count} | {_pct(int(count), int(denom))} |"
 
     lines: List[str] = []
 
     # ── Sub-header (the README h1 is already above the marker) ──────────────
     lines += [
-        f"> **Generated:** {now}  ",
+        f"> **Generated:** {overview['generated_at']}  ",
         f"> **Repository:** [{REPO_OWNER}/{REPO_NAME}]({repo_url})",
         "",
         "---",
@@ -391,25 +489,19 @@ def generate_markdown(
     ]
 
     # ── Overview ────────────────────────────────────────────────────────────
-    open_count   = states.get("open", 0)
-    closed_count = states.get("closed", 0)
-    all_dates    = [i["created_at"][:10] for i in issues if i.get("created_at")]
-    first_date   = min(all_dates) if all_dates else "—"
-    last_date    = max(all_dates) if all_dates else "—"
-
     lines += [
         "## Overview",
         "",
         "| Metric | Value |",
         "|--------|-------|",
         f"| Total Issues | **{total}** |",
-        f"| Open Issues | {open_count} ({_pct(open_count, total)}) |",
-        f"| Closed Issues | {closed_count} ({_pct(closed_count, total)}) |",
-        f"| Unique Contributors | {len(user_counts)} |",
-        f"| Distinct Labels | {len(label_counts)} |",
-        f"| Total Label Assignments | {sum(label_counts.values())} |",
-        f"| First Issue | {first_date} |",
-        f"| Latest Issue | {last_date} |",
+        f"| Open Issues | {overview['open_issues']} ({_pct(int(overview['open_issues']), total)}) |",
+        f"| Closed Issues | {overview['closed_issues']} ({_pct(int(overview['closed_issues']), total)}) |",
+        f"| Unique Contributors | {overview['unique_contributors']} |",
+        f"| Distinct Labels | {overview['distinct_labels']} |",
+        f"| Total Label Assignments | {overview['total_label_assignments']} |",
+        f"| First Issue | {overview['first_issue_date']} |",
+        f"| Latest Issue | {overview['latest_issue_date']} |",
         "",
     ]
 
@@ -420,10 +512,10 @@ def generate_markdown(
         "| Label | Count | % of All Issues |",
         "|-------|------:|----------------:|",
     ]
-    for label, count in label_counts.most_common():
-        lines.append(trow(f"`{label}`", count))
+    for row in _read_csv(CSV_LABELS):
+        lines.append(trow(f"`{row['label']}`", row["count"]))
 
-    no_label = sum(1 for i in issues if not i.get("labels"))
+    no_label = int(overview["unlabeled_issues"])
     lines += [
         "",
         f"> **{no_label}** issues ({_pct(no_label, total)}) carry no label.",
@@ -437,13 +529,13 @@ def generate_markdown(
         "| State | Count | Percentage |",
         "|-------|------:|-----------:|",
     ]
-    for state, count in states.most_common():
-        lines.append(trow(state.capitalize(), count))
+    for row in _read_csv(CSV_STATES):
+        lines.append(trow(row["state"].capitalize(), row["count"]))
     lines.append("")
 
     # ── Resolution Time ─────────────────────────────────────────────────────
-    if resolution:
-        r = resolution
+    if os.path.exists(CSV_RESOLUTION):
+        r = {row["metric"]: row["value"] for row in _read_csv(CSV_RESOLUTION)}
         lines += [
             "## Issue Resolution Time",
             "",
@@ -451,16 +543,16 @@ def generate_markdown(
             "",
             "| Metric | Days |",
             "|--------|-----:|",
-            f"| Average | {r['avg_days']:.1f} |",
+            f"| Average | {float(r['avg_days']):.1f} |",
             f"| Median | {r['median_days']} |",
             f"| Fastest | {r['min_days']} |",
             f"| Slowest | {r['max_days']} |",
             "",
             "| SLA Bucket | Count | % of Closed |",
             "|------------|------:|------------:|",
-            f"| Closed within 1 day | {r['within_1d']} | {_pct(r['within_1d'], r['count'])} |",
-            f"| Closed within 7 days | {r['within_7d']} | {_pct(r['within_7d'], r['count'])} |",
-            f"| Closed within 30 days | {r['within_30d']} | {_pct(r['within_30d'], r['count'])} |",
+            f"| Closed within 1 day | {r['within_1d']} | {_pct(int(r['within_1d']), int(r['count']))} |",
+            f"| Closed within 7 days | {r['within_7d']} | {_pct(int(r['within_7d']), int(r['count']))} |",
+            f"| Closed within 30 days | {r['within_30d']} | {_pct(int(r['within_30d']), int(r['count']))} |",
             "",
         ]
 
@@ -471,8 +563,9 @@ def generate_markdown(
         "| Rank | User | Issues | % of Total |",
         "|-----:|------|-------:|-----------:|",
     ]
-    for rank, (user, count) in enumerate(user_counts.most_common(15), 1):
-        lines.append(f"| {rank} | [{user}](https://github.com/{user}) | {count} | {_pct(count, total)} |")
+    for rank, row in enumerate(_read_csv(CSV_CONTRIBUTORS)[:15], 1):
+        user, count = row["user"], row["issues"]
+        lines.append(f"| {rank} | [{user}](https://github.com/{user}) | {count} | {_pct(int(count), total)} |")
     lines.append("")
 
     # ── Yearly ──────────────────────────────────────────────────────────────
@@ -482,15 +575,16 @@ def generate_markdown(
         "| Year | Count | % of Total |",
         "|------|------:|-----------:|",
     ]
-    for year, count in yearly.items():
-        lines.append(trow(year, count))
+    for row in _read_csv(CSV_YEARLY):
+        lines.append(trow(row["year"], row["count"]))
     lines.append("")
 
     # ── Monthly ─────────────────────────────────────────────────────────────
-    counts_list = list(monthly.values())
-    avg_mo  = sum(counts_list) / len(counts_list) if counts_list else 0
-    peak_mo = max(monthly, key=monthly.get) if monthly else "—"
-    low_mo  = min(monthly, key=monthly.get) if monthly else "—"
+    monthly_rows = _read_csv(CSV_MONTHLY)
+    counts_list  = [int(row["count"]) for row in monthly_rows]
+    avg_mo       = sum(counts_list) / len(counts_list) if counts_list else 0
+    peak_row     = max(monthly_rows, key=lambda row: int(row["count"])) if monthly_rows else None
+    low_row      = min(monthly_rows, key=lambda row: int(row["count"])) if monthly_rows else None
 
     lines += [
         "## Issues per Month",
@@ -502,29 +596,30 @@ def generate_markdown(
         "| Metric | Value |",
         "|--------|-------|",
         f"| Average Issues / Month | {avg_mo:.1f} |",
-        f"| Peak Month | {peak_mo} — {monthly.get(peak_mo, 0)} issues |",
-        f"| Quietest Month | {low_mo} — {monthly.get(low_mo, 0)} issues |",
-        f"| Months with Activity | {len(monthly)} |",
+        f"| Peak Month | {peak_row['month'] if peak_row else '—'} — {peak_row['count'] if peak_row else 0} issues |",
+        f"| Quietest Month | {low_row['month'] if low_row else '—'} — {low_row['count'] if low_row else 0} issues |",
+        f"| Months with Activity | {len(monthly_rows)} |",
         "",
         "### Full Monthly Breakdown",
         "",
         "| Month | Count |",
         "|-------|------:|",
     ]
-    for month, count in monthly.items():
-        lines.append(f"| {month} | {count} |")
+    for row in monthly_rows:
+        lines.append(f"| {row['month']} | {row['count']} |")
     lines.append("")
 
     # ── Day-of-Week ─────────────────────────────────────────────────────────
+    weekday_rows = _read_csv(CSV_WEEKDAY)
     lines += [
         "## Issues by Day of Week (UTC)",
         "",
         "| Day | Count | % of Total |",
         "|-----|------:|-----------:|",
     ]
-    for day, count in weekday_counts.items():
-        lines.append(trow(day, count))
-    busiest_day = max(weekday_counts, key=weekday_counts.get)
+    for row in weekday_rows:
+        lines.append(trow(row["day"], row["count"]))
+    busiest_day = max(weekday_rows, key=lambda row: int(row["count"]))["day"]
     lines += [
         "",
         f"> Most issues are opened on **{busiest_day}**.",
@@ -532,57 +627,54 @@ def generate_markdown(
     ]
 
     # ── Hour of Day ─────────────────────────────────────────────────────────
+    hourly_rows = _read_csv(CSV_HOURLY)
     lines += [
         "## Issues by Hour of Day (UTC)",
         "",
         "| Hour (UTC) | Count |",
         "|:----------:|------:|",
     ]
-    for hour, count in hour_counts.items():
-        lines.append(f"| {hour:02d}:00 | {count} |")
-    busiest_hour = max(hour_counts, key=hour_counts.get) if hour_counts else 0
+    for row in hourly_rows:
+        lines.append(f"| {row['hour']}:00 | {row['count']} |")
+    busiest_hour = max(hourly_rows, key=lambda row: int(row["count"]))["hour"] if hourly_rows else "00"
     lines += [
         "",
-        f"> Peak activity at **{busiest_hour:02d}:00 UTC**.",
+        f"> Peak activity at **{busiest_hour}:00 UTC**.",
         "",
     ]
 
     # ── Label Combos ─────────────────────────────────────────────────────────
-    if combo_counts:
+    combo_rows = _read_csv(CSV_LABEL_COMBOS)
+    if combo_rows:
         lines += [
             "## Most Common Label Combinations",
             "",
             "| Labels | Count |",
             "|--------|------:|",
         ]
-        for combo, count in combo_counts.most_common(10):
-            label_str = " + ".join(f"`{l}`" for l in combo)
-            lines.append(f"| {label_str} | {count} |")
+        for row in combo_rows[:10]:
+            label_str = " + ".join(f"`{l}`" for l in row["labels"].split(" + "))
+            lines.append(f"| {label_str} | {row['count']} |")
         lines.append("")
 
     # ── Issues with Most Labels ──────────────────────────────────────────────
-    top_labeled = issues_with_most_labels(issues)
-    if any(len(i.get("labels", [])) > 0 for i in top_labeled):
+    top_labeled_rows = _read_csv(CSV_TOP_LABELED)
+    if top_labeled_rows:
         lines += [
             "## Issues Carrying the Most Labels",
             "",
             "| Issue | Title | Labels |",
             "|-------|-------|-------:|",
         ]
-        for i in top_labeled:
-            n     = len(i.get("labels", []))
-            url   = i.get("html_url", "")
-            num   = i.get("number", "")
-            title = (i.get("title") or "")[:70]
-            if n:
-                lines.append(f"| [#{num}]({url}) | {title} | {n} |")
+        for row in top_labeled_rows:
+            lines.append(f"| [#{row['issue']}]({row['url']}) | {row['title']} | {row['labels']} |")
         lines.append("")
 
     # ── Footer ──────────────────────────────────────────────────────────────
     lines += [
         "---",
         "",
-        f"*Statistics generated by `extract_statistics.py` on {now}.*",
+        f"*Statistics generated by `extract_statistics.py` on {overview['generated_at']}.*",
     ]
 
     stats_block = "\n".join(lines) + "\n"
@@ -636,7 +728,7 @@ def print_summary(
         print(f"    {rank}. {user:<32} {count:>5}  ({_pct(count, total)})")
     print(sep)
     print(f"\nOutput files:")
-    print(f"  {CSV_FILE}")
+    print(f"  {CSV_DIR}/")
     print(f"  {PLOT_FILE}")
     print(f"  {README_FILE}")
 
@@ -671,13 +763,16 @@ def main() -> None:
     weekday_counts = analyze_weekday(issues)
     hour_counts    = analyze_hour(issues)
     combo_counts   = analyze_label_combos(issues)
+    top_labeled    = issues_with_most_labels(issues)
+    generated_at   = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC")
 
-    save_csv(monthly)
-    create_monthly_plot(CSV_FILE)
-    generate_markdown(
-        issues, label_counts, user_counts, monthly, yearly,
-        states, resolution, weekday_counts, hour_counts, combo_counts,
+    save_all_csvs(
+        issues, label_counts, user_counts, monthly, yearly, states,
+        resolution, weekday_counts, hour_counts, combo_counts, top_labeled,
+        generated_at,
     )
+    create_monthly_plot(CSV_MONTHLY)
+    generate_markdown()
 
     print_summary(issues, label_counts, user_counts, states)
 
