@@ -102,8 +102,6 @@ Based on **2227** closed issues.
 
 ## Issues per Month
 
-![Issues Opened per Month](issues_per_month.png)
-
 ### Monthly Summary
 
 | Metric | Value |
