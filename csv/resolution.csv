@@ -1,9 +1,9 @@
-metric,value
-count,2227
-avg_days,7.7126
-median_days,7
-min_days,0
-max_days,185
-within_1d,253
-within_7d,1873
-within_30d,2212
+Metric,Value
+Count,2227
+Average days,7.7126
+Median days,7
+Min days,0
+Max days,185
+Within 1 day,253
+Within 7 days,1873
+Within 30 days,2212

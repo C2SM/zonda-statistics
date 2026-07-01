@@ -1,11 +1,11 @@
-metric,value
-generated_at,2026-07-01 11:59 UTC
-total_issues,2366
-open_issues,139
-closed_issues,2227
-unique_contributors,351
-distinct_labels,16
-total_label_assignments,4706
-first_issue_date,2025-05-05
-latest_issue_date,2026-07-01
-unlabeled_issues,9
+Metric,Value
+Generated at,2026-07-01 11:59 UTC
+Total issues,2366
+Open issues,139
+Closed issues,2227
+Unique contributors,351
+Distinct labels,16
+Total label assignments,4706
+First issue date,2025-05-05
+Latest issue date,2026-07-01
+Unlabeled issues,9
