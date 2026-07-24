@@ -8,7 +8,7 @@ Raw data backing this report is stored in [csv/](csv/); each table below is gene
 [MIT](LICENSE)
 
 <!-- STATS:START -->
-> **Generated:** 2026-07-23 00:45 UTC  
+> **Generated:** 2026-07-24 00:42 UTC  
 > **Repository:** [C2SM/zonda-request](https://github.com/C2SM/zonda-request)
 
 ---
@@ -17,29 +17,29 @@ Raw data backing this report is stored in [csv/](csv/); each table below is gene
 
 | Metric | Value |
 |--------|-------|
-| Total Issues | **2503** |
-| Open Issues | 36 (1.4%) |
-| Closed Issues | 2467 (98.6%) |
+| Total Issues | **2515** |
+| Open Issues | 38 (1.5%) |
+| Closed Issues | 2477 (98.5%) |
 | Unique Contributors | 361 |
 | Distinct Labels | 16 |
-| Total Label Assignments | 4978 |
+| Total Label Assignments | 5002 |
 | First Issue | 2025-05-05 |
-| Latest Issue | 2026-07-22 |
+| Latest Issue | 2026-07-23 |
 
 ## Label Statistics
 
 | Label | Count | % of All Issues |
 |-------|------:|----------------:|
-| `data request` | 2475 | 98.9% |
-| `completed` | 1866 | 74.6% |
-| `failed` | 368 | 14.7% |
-| `invalid` | 162 | 6.5% |
+| `data request` | 2487 | 98.9% |
+| `completed` | 1878 | 74.7% |
+| `failed` | 370 | 14.7% |
+| `invalid` | 162 | 6.4% |
 | `aborted` | 31 | 1.2% |
 | `submitted` | 29 | 1.2% |
 | `enhancement` | 10 | 0.4% |
 | `bug` | 9 | 0.4% |
 | `discussion` | 8 | 0.3% |
-| `testsuite` | 8 | 0.3% |
+| `testsuite` | 6 | 0.2% |
 | `frontend` | 4 | 0.2% |
 | `v2.1` | 3 | 0.1% |
 | `external bug` | 2 | 0.1% |
@@ -53,12 +53,12 @@ Raw data backing this report is stored in [csv/](csv/); each table below is gene
 
 | State | Count | Percentage |
 |-------|------:|-----------:|
-| Closed | 2467 | 98.6% |
-| Open | 36 | 1.4% |
+| Closed | 2477 | 98.5% |
+| Open | 38 | 1.5% |
 
 ## Issue Resolution Time
 
-Based on **2467** closed issues.
+Based on **2477** closed issues.
 
 | Metric | Days |
 |--------|-----:|
@@ -69,17 +69,17 @@ Based on **2467** closed issues.
 
 | SLA Bucket | Count | % of Closed |
 |------------|------:|------------:|
-| Closed within 1 day | 268 | 10.9% |
-| Closed within 7 days | 2113 | 85.7% |
-| Closed within 30 days | 2452 | 99.4% |
+| Closed within 1 day | 269 | 10.9% |
+| Closed within 7 days | 2122 | 85.7% |
+| Closed within 30 days | 2461 | 99.4% |
 
 ## Top Contributors (by Issues Opened)
 
 | Rank | User | Issues | % of Total |
 |-----:|------|-------:|-----------:|
-| 1 | [stelliom](https://github.com/stelliom) | 137 | 5.5% |
+| 1 | [stelliom](https://github.com/stelliom) | 145 | 5.8% |
 | 2 | [janisklamt](https://github.com/janisklamt) | 70 | 2.8% |
-| 3 | [shirareznik](https://github.com/shirareznik) | 54 | 2.2% |
+| 3 | [shirareznik](https://github.com/shirareznik) | 54 | 2.1% |
 | 4 | [AngeloCampanaleCMCC](https://github.com/AngeloCampanaleCMCC) | 52 | 2.1% |
 | 5 | [krishaizl](https://github.com/krishaizl) | 51 | 2.0% |
 | 6 | [criess374](https://github.com/criess374) | 50 | 2.0% |
@@ -97,8 +97,8 @@ Based on **2467** closed issues.
 
 | Year | Count | % of Total |
 |------|------:|-----------:|
-| 2025 | 1081 | 43.2% |
-| 2026 | 1422 | 56.8% |
+| 2025 | 1081 | 43.0% |
+| 2026 | 1434 | 57.0% |
 
 ## Issues per Month
 
@@ -106,7 +106,7 @@ Based on **2467** closed issues.
 
 | Metric | Value |
 |--------|-------|
-| Average Issues / Month | 166.9 |
+| Average Issues / Month | 167.7 |
 | Peak Month | 2026-06 — 404 issues |
 | Quietest Month | 2026-01 — 117 issues |
 | Months with Activity | 15 |
@@ -129,16 +129,16 @@ Based on **2467** closed issues.
 | 2026-04 | 189 |
 | 2026-05 | 233 |
 | 2026-06 | 404 |
-| 2026-07 | 141 |
+| 2026-07 | 153 |
 
 ## Issues by Day of Week (UTC)
 
 | Day | Count | % of Total |
 |-----|------:|-----------:|
-| Monday | 386 | 15.4% |
-| Tuesday | 476 | 19.0% |
-| Wednesday | 550 | 22.0% |
-| Thursday | 453 | 18.1% |
+| Monday | 386 | 15.3% |
+| Tuesday | 476 | 18.9% |
+| Wednesday | 550 | 21.9% |
+| Thursday | 465 | 18.5% |
 | Friday | 334 | 13.3% |
 | Saturday | 131 | 5.2% |
 | Sunday | 173 | 6.9% |
@@ -158,14 +158,14 @@ Based on **2467** closed issues.
 | 06:00 | 61 |
 | 07:00 | 110 |
 | 08:00 | 260 |
-| 09:00 | 270 |
-| 10:00 | 217 |
-| 11:00 | 204 |
+| 09:00 | 271 |
+| 10:00 | 218 |
+| 11:00 | 212 |
 | 12:00 | 237 |
-| 13:00 | 252 |
+| 13:00 | 253 |
 | 14:00 | 245 |
 | 15:00 | 176 |
-| 16:00 | 108 |
+| 16:00 | 109 |
 | 17:00 | 63 |
 | 18:00 | 71 |
 | 19:00 | 54 |
@@ -180,14 +180,14 @@ Based on **2467** closed issues.
 
 | Labels | Count |
 |--------|------:|
-| `completed` + `data request` | 1845 |
+| `completed` + `data request` | 1857 |
 | `data request` + `failed` | 350 |
 | `data request` + `invalid` | 161 |
 | `data request` + `submitted` | 28 |
 | `aborted` + `data request` | 21 |
 | `completed` + `data request` + `failed` | 8 |
 | `data request` + `discussion` + `failed` | 4 |
-| `aborted` + `completed` + `data request` + `testsuite` | 4 |
+| `aborted` + `completed` + `data request` + `testsuite` | 3 |
 | `aborted` + `completed` + `data request` + `failed` | 2 |
 | `bug` + `external bug` | 2 |
 
@@ -196,12 +196,12 @@ Based on **2467** closed issues.
 | Issue | Title | Labels |
 |-------|-------|-------:|
 | [#1698](https://github.com/C2SM/zonda-request/issues/1698) | Testsuite MCH/ICON-CH2 | 5 |
+| [#1701](https://github.com/C2SM/zonda-request/issues/1701) | Testsuite Input Grid with Nesting | 5 |
 | [#414](https://github.com/C2SM/zonda-request/issues/414) | ICON-CAP | 4 |
 | [#564](https://github.com/C2SM/zonda-request/issues/564) | ICON-CH1 | 4 |
 | [#565](https://github.com/C2SM/zonda-request/issues/565) | ICON-CH2 | 4 |
-| [#1697](https://github.com/C2SM/zonda-request/issues/1697) | Testsuite DWD/ICON-D2 | 4 |
 
 ---
 
-*Statistics generated by `extract_statistics.py` on 2026-07-23 00:45 UTC.*
+*Statistics generated by `extract_statistics.py` on 2026-07-24 00:42 UTC.*
 <!-- STATS:END -->
