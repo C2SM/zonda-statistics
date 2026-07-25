@@ -1,11 +1,11 @@
 Label,Count
-data request,2487
-completed,1878
+data request,2489
+completed,1880
 failed,370
 invalid,162
 aborted,31
 submitted,29
-enhancement,10
+enhancement,11
 bug,9
 discussion,8
 testsuite,6
