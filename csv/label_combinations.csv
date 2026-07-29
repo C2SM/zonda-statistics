@@ -1,7 +1,7 @@
 Labels,Count
-completed + data request,1862
+completed + data request,1870
 data request + failed,351
-data request + invalid,161
+data request + invalid,162
 data request + submitted,28
 aborted + data request,21
 completed + data request + failed,8
