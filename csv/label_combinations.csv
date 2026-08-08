@@ -1,10 +1,11 @@
 Labels,Count
-completed + data request,1917
+completed + data request,1921
 data request + failed,351
 data request + invalid,164
 data request + submitted,28
 aborted + data request,21
 completed + data request + failed,8
+enhancement + jenkins-migration,8
 data request + discussion + failed,4
 aborted + completed + data request + testsuite,3
 aborted + completed + data request + failed,2
@@ -23,3 +24,4 @@ completed + data request + failed + testsuite,1
 backend + bug + v2.1,1
 enhancement + v2.2,1
 data request + failed + invalid,1
+documentation + jenkins-migration,1

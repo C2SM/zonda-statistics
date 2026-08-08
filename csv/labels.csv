@@ -1,12 +1,13 @@
 Label,Count
-data request,2554
-completed,1938
+data request,2558
+completed,1942
 failed,371
 invalid,165
 aborted,31
 submitted,29
-enhancement,11
+enhancement,20
 bug,9
+jenkins-migration,9
 discussion,8
 testsuite,6
 frontend,4
@@ -15,3 +16,4 @@ external bug,2
 v2.0,1
 backend,1
 v2.2,1
+documentation,1
