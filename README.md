@@ -8,7 +8,7 @@ Raw data backing this report is stored in [csv/](csv/); each table below is gene
 [MIT](LICENSE)
 
 <!-- STATS:START -->
-> **Generated:** 2026-08-18 00:18 UTC  
+> **Generated:** 2026-08-19 00:18 UTC  
 > **Repository:** [C2SM/zonda-request](https://github.com/C2SM/zonda-request)
 
 ---
@@ -17,31 +17,31 @@ Raw data backing this report is stored in [csv/](csv/); each table below is gene
 
 | Metric | Value |
 |--------|-------|
-| Total Issues | **2662** |
-| Open Issues | 58 (2.2%) |
-| Closed Issues | 2604 (97.8%) |
-| Unique Contributors | 368 |
+| Total Issues | **2672** |
+| Open Issues | 47 (1.8%) |
+| Closed Issues | 2625 (98.2%) |
+| Unique Contributors | 369 |
 | Distinct Labels | 18 |
-| Total Label Assignments | 5286 |
+| Total Label Assignments | 5307 |
 | First Issue | 2025-05-05 |
-| Latest Issue | 2026-08-17 |
+| Latest Issue | 2026-08-18 |
 
 ## Label Statistics
 
 | Label | Count | % of All Issues |
 |-------|------:|----------------:|
-| `data request` | 2622 | 98.5% |
-| `completed` | 1994 | 74.9% |
-| `failed` | 372 | 14.0% |
+| `data request` | 2632 | 98.5% |
+| `completed` | 2000 | 74.9% |
+| `failed` | 375 | 14.0% |
 | `invalid` | 173 | 6.5% |
 | `aborted` | 31 | 1.2% |
-| `submitted` | 29 | 1.1% |
-| `enhancement` | 20 | 0.8% |
+| `submitted` | 30 | 1.1% |
+| `enhancement` | 20 | 0.7% |
 | `bug` | 9 | 0.3% |
+| `discussion` | 9 | 0.3% |
 | `jenkins-migration` | 9 | 0.3% |
-| `discussion` | 8 | 0.3% |
 | `testsuite` | 6 | 0.2% |
-| `frontend` | 4 | 0.2% |
+| `frontend` | 4 | 0.1% |
 | `v2.1` | 3 | 0.1% |
 | `external bug` | 2 | 0.1% |
 | `v2.0` | 1 | 0.0% |
@@ -55,12 +55,12 @@ Raw data backing this report is stored in [csv/](csv/); each table below is gene
 
 | State | Count | Percentage |
 |-------|------:|-----------:|
-| Closed | 2604 | 97.8% |
-| Open | 58 | 2.2% |
+| Closed | 2625 | 98.2% |
+| Open | 47 | 1.8% |
 
 ## Issue Resolution Time
 
-Based on **2604** closed issues.
+Based on **2625** closed issues.
 
 | Metric | Days |
 |--------|-----:|
@@ -71,9 +71,9 @@ Based on **2604** closed issues.
 
 | SLA Bucket | Count | % of Closed |
 |------------|------:|------------:|
-| Closed within 1 day | 277 | 10.6% |
-| Closed within 7 days | 2248 | 86.3% |
-| Closed within 30 days | 2588 | 99.4% |
+| Closed within 1 day | 281 | 10.7% |
+| Closed within 7 days | 2269 | 86.4% |
+| Closed within 30 days | 2609 | 99.4% |
 
 ## Top Contributors (by Issues Opened)
 
@@ -83,14 +83,14 @@ Based on **2604** closed issues.
 | 2 | [janisklamt](https://github.com/janisklamt) | 85 | 3.2% |
 | 3 | [mjaehn](https://github.com/mjaehn) | 55 | 2.1% |
 | 4 | [shirareznik](https://github.com/shirareznik) | 54 | 2.0% |
-| 5 | [AngeloCampanaleCMCC](https://github.com/AngeloCampanaleCMCC) | 52 | 2.0% |
+| 5 | [AngeloCampanaleCMCC](https://github.com/AngeloCampanaleCMCC) | 52 | 1.9% |
 | 6 | [krishaizl](https://github.com/krishaizl) | 51 | 1.9% |
 | 7 | [criess374](https://github.com/criess374) | 51 | 1.9% |
 | 8 | [donuhr](https://github.com/donuhr) | 43 | 1.6% |
 | 9 | [jvicenciov](https://github.com/jvicenciov) | 41 | 1.5% |
 | 10 | [LudovicoMattavelli](https://github.com/LudovicoMattavelli) | 41 | 1.5% |
 | 11 | [jamespanton93](https://github.com/jamespanton93) | 37 | 1.4% |
-| 12 | [Chao123-cyber](https://github.com/Chao123-cyber) | 36 | 1.4% |
+| 12 | [Chao123-cyber](https://github.com/Chao123-cyber) | 36 | 1.3% |
 | 13 | [mm10525](https://github.com/mm10525) | 34 | 1.3% |
 | 14 | [maymeret](https://github.com/maymeret) | 34 | 1.3% |
 | 15 | [awyszogrodzki](https://github.com/awyszogrodzki) | 31 | 1.2% |
@@ -99,8 +99,8 @@ Based on **2604** closed issues.
 
 | Year | Count | % of Total |
 |------|------:|-----------:|
-| 2025 | 1081 | 40.6% |
-| 2026 | 1581 | 59.4% |
+| 2025 | 1081 | 40.5% |
+| 2026 | 1591 | 59.5% |
 
 ## Issues per Month
 
@@ -108,9 +108,9 @@ Based on **2604** closed issues.
 
 | Metric | Value |
 |--------|-------|
-| Average Issues / Month | 166.4 |
+| Average Issues / Month | 167.0 |
 | Peak Month | 2026-06 — 404 issues |
-| Quietest Month | 2026-08 — 103 issues |
+| Quietest Month | 2026-08 — 113 issues |
 | Months with Activity | 16 |
 
 ### Full Monthly Breakdown
@@ -132,17 +132,17 @@ Based on **2604** closed issues.
 | 2026-05 | 233 |
 | 2026-06 | 404 |
 | 2026-07 | 197 |
-| 2026-08 | 103 |
+| 2026-08 | 113 |
 
 ## Issues by Day of Week (UTC)
 
 | Day | Count | % of Total |
 |-----|------:|-----------:|
 | Monday | 419 | 15.7% |
-| Tuesday | 509 | 19.1% |
-| Wednesday | 580 | 21.8% |
+| Tuesday | 519 | 19.4% |
+| Wednesday | 580 | 21.7% |
 | Thursday | 488 | 18.3% |
-| Friday | 359 | 13.5% |
+| Friday | 359 | 13.4% |
 | Saturday | 133 | 5.0% |
 | Sunday | 174 | 6.5% |
 
@@ -160,20 +160,20 @@ Based on **2604** closed issues.
 | 05:00 | 33 |
 | 06:00 | 68 |
 | 07:00 | 136 |
-| 08:00 | 272 |
-| 09:00 | 281 |
-| 10:00 | 230 |
+| 08:00 | 273 |
+| 09:00 | 282 |
+| 10:00 | 232 |
 | 11:00 | 218 |
 | 12:00 | 249 |
 | 13:00 | 271 |
 | 14:00 | 257 |
 | 15:00 | 182 |
-| 16:00 | 111 |
+| 16:00 | 112 |
 | 17:00 | 65 |
 | 18:00 | 71 |
-| 19:00 | 57 |
-| 20:00 | 40 |
-| 21:00 | 24 |
+| 19:00 | 59 |
+| 20:00 | 42 |
+| 21:00 | 25 |
 | 22:00 | 19 |
 | 23:00 | 13 |
 
@@ -183,16 +183,16 @@ Based on **2604** closed issues.
 
 | Labels | Count |
 |--------|------:|
-| `completed` + `data request` | 1973 |
-| `data request` + `failed` | 352 |
+| `completed` + `data request` | 1978 |
+| `data request` + `failed` | 355 |
 | `data request` + `invalid` | 171 |
-| `data request` + `submitted` | 28 |
+| `data request` + `submitted` | 29 |
 | `aborted` + `data request` | 21 |
 | `completed` + `data request` + `failed` | 8 |
 | `enhancement` + `jenkins-migration` | 8 |
 | `data request` + `discussion` + `failed` | 4 |
 | `aborted` + `completed` + `data request` + `testsuite` | 3 |
-| `aborted` + `completed` + `data request` + `failed` | 2 |
+| `completed` + `data request` + `discussion` | 3 |
 
 ## Issues Carrying the Most Labels
 
@@ -206,5 +206,5 @@ Based on **2604** closed issues.
 
 ---
 
-*Statistics generated by `extract_statistics.py` on 2026-08-18 00:18 UTC.*
+*Statistics generated by `extract_statistics.py` on 2026-08-19 00:18 UTC.*
 <!-- STATS:END -->

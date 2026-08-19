@@ -1,14 +1,14 @@
 Label,Count
-data request,2622
-completed,1994
-failed,372
+data request,2632
+completed,2000
+failed,375
 invalid,173
 aborted,31
-submitted,29
+submitted,30
 enhancement,20
 bug,9
+discussion,9
 jenkins-migration,9
-discussion,8
 testsuite,6
 frontend,4
 v2.1,3
