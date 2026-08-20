@@ -1,11 +1,11 @@
 Label,Count
-data request,2632
-completed,2000
+data request,2641
+completed,2010
 failed,375
 invalid,173
 aborted,31
-submitted,30
-enhancement,20
+submitted,29
+enhancement,21
 bug,9
 discussion,9
 jenkins-migration,9
