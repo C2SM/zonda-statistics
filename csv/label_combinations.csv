@@ -1,8 +1,8 @@
 Labels,Count
-completed + data request,2045
+completed + data request,2050
 data request + failed,358
-data request + invalid,181
-data request + submitted,28
+data request + invalid,185
+data request + submitted,29
 aborted + data request,21
 completed + data request + failed,8
 enhancement + jenkins-migration,8
