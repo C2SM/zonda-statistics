@@ -1,10 +1,10 @@
 Label,Count
-data request,2721
-completed,2072
-failed,378
+data request,2725
+completed,2076
+failed,379
 invalid,187
 aborted,31
-submitted,30
+submitted,29
 enhancement,21
 bug,9
 discussion,9
