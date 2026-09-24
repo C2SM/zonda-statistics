@@ -8,7 +8,7 @@ Raw data backing this report is stored in [csv/](csv/); each table below is gene
 [MIT](LICENSE)
 
 <!-- STATS:START -->
-> **Generated:** 2026-09-23 00:41 UTC  
+> **Generated:** 2026-09-24 00:43 UTC  
 > **Repository:** [C2SM/zonda-request](https://github.com/C2SM/zonda-request)
 
 ---
@@ -17,27 +17,27 @@ Raw data backing this report is stored in [csv/](csv/); each table below is gene
 
 | Metric | Value |
 |--------|-------|
-| Total Issues | **2849** |
-| Open Issues | 27 (0.9%) |
-| Closed Issues | 2822 (99.1%) |
-| Unique Contributors | 386 |
+| Total Issues | **2858** |
+| Open Issues | 32 (1.1%) |
+| Closed Issues | 2826 (98.9%) |
+| Unique Contributors | 388 |
 | Distinct Labels | 18 |
-| Total Label Assignments | 5657 |
+| Total Label Assignments | 5678 |
 | First Issue | 2025-05-05 |
-| Latest Issue | 2026-09-22 |
+| Latest Issue | 2026-09-23 |
 
 ## Label Statistics
 
 | Label | Count | % of All Issues |
 |-------|------:|----------------:|
-| `data request` | 2805 | 98.5% |
-| `completed` | 2151 | 75.5% |
-| `failed` | 379 | 13.3% |
-| `invalid` | 193 | 6.8% |
-| `aborted` | 32 | 1.1% |
+| `data request` | 2814 | 98.5% |
+| `completed` | 2157 | 75.5% |
+| `failed` | 381 | 13.3% |
+| `invalid` | 196 | 6.9% |
+| `aborted` | 33 | 1.2% |
 | `submitted` | 29 | 1.0% |
 | `enhancement` | 21 | 0.7% |
-| `jenkins-migration` | 10 | 0.4% |
+| `jenkins-migration` | 10 | 0.3% |
 | `bug` | 9 | 0.3% |
 | `discussion` | 9 | 0.3% |
 | `testsuite` | 6 | 0.2% |
@@ -49,18 +49,18 @@ Raw data backing this report is stored in [csv/](csv/); each table below is gene
 | `v2.2` | 1 | 0.0% |
 | `documentation` | 1 | 0.0% |
 
-> **10** issues (0.4%) carry no label.
+> **10** issues (0.3%) carry no label.
 
 ## Issue States
 
 | State | Count | Percentage |
 |-------|------:|-----------:|
-| Closed | 2822 | 99.1% |
-| Open | 27 | 0.9% |
+| Closed | 2826 | 98.9% |
+| Open | 32 | 1.1% |
 
 ## Issue Resolution Time
 
-Based on **2822** closed issues.
+Based on **2826** closed issues.
 
 | Metric | Days |
 |--------|-----:|
@@ -71,9 +71,9 @@ Based on **2822** closed issues.
 
 | SLA Bucket | Count | % of Closed |
 |------------|------:|------------:|
-| Closed within 1 day | 305 | 10.8% |
-| Closed within 7 days | 2464 | 87.3% |
-| Closed within 30 days | 2806 | 99.4% |
+| Closed within 1 day | 306 | 10.8% |
+| Closed within 7 days | 2467 | 87.3% |
+| Closed within 30 days | 2809 | 99.4% |
 
 ## Top Contributors (by Issues Opened)
 
@@ -81,12 +81,12 @@ Based on **2822** closed issues.
 |-----:|------|-------:|-----------:|
 | 1 | [stelliom](https://github.com/stelliom) | 149 | 5.2% |
 | 2 | [janisklamt](https://github.com/janisklamt) | 95 | 3.3% |
-| 3 | [mjaehn](https://github.com/mjaehn) | 58 | 2.0% |
+| 3 | [mjaehn](https://github.com/mjaehn) | 59 | 2.1% |
 | 4 | [shirareznik](https://github.com/shirareznik) | 54 | 1.9% |
 | 5 | [AngeloCampanaleCMCC](https://github.com/AngeloCampanaleCMCC) | 52 | 1.8% |
 | 6 | [krishaizl](https://github.com/krishaizl) | 51 | 1.8% |
 | 7 | [criess374](https://github.com/criess374) | 51 | 1.8% |
-| 8 | [jvicenciov](https://github.com/jvicenciov) | 47 | 1.6% |
+| 8 | [jvicenciov](https://github.com/jvicenciov) | 48 | 1.7% |
 | 9 | [donuhr](https://github.com/donuhr) | 43 | 1.5% |
 | 10 | [LudovicoMattavelli](https://github.com/LudovicoMattavelli) | 41 | 1.4% |
 | 11 | [jamespanton93](https://github.com/jamespanton93) | 37 | 1.3% |
@@ -99,8 +99,8 @@ Based on **2822** closed issues.
 
 | Year | Count | % of Total |
 |------|------:|-----------:|
-| 2025 | 1081 | 37.9% |
-| 2026 | 1768 | 62.1% |
+| 2025 | 1081 | 37.8% |
+| 2026 | 1777 | 62.2% |
 
 ## Issues per Month
 
@@ -108,9 +108,9 @@ Based on **2822** closed issues.
 
 | Metric | Value |
 |--------|-------|
-| Average Issues / Month | 167.6 |
+| Average Issues / Month | 168.1 |
 | Peak Month | 2026-06 — 404 issues |
-| Quietest Month | 2026-09 — 104 issues |
+| Quietest Month | 2026-09 — 113 issues |
 | Months with Activity | 17 |
 
 ### Full Monthly Breakdown
@@ -133,16 +133,16 @@ Based on **2822** closed issues.
 | 2026-06 | 404 |
 | 2026-07 | 197 |
 | 2026-08 | 186 |
-| 2026-09 | 104 |
+| 2026-09 | 113 |
 
 ## Issues by Day of Week (UTC)
 
 | Day | Count | % of Total |
 |-----|------:|-----------:|
-| Monday | 452 | 15.9% |
+| Monday | 452 | 15.8% |
 | Tuesday | 554 | 19.4% |
-| Wednesday | 609 | 21.4% |
-| Thursday | 529 | 18.6% |
+| Wednesday | 618 | 21.6% |
+| Thursday | 529 | 18.5% |
 | Friday | 380 | 13.3% |
 | Saturday | 140 | 4.9% |
 | Sunday | 185 | 6.5% |
@@ -159,15 +159,15 @@ Based on **2822** closed issues.
 | 03:00 | 23 |
 | 04:00 | 27 |
 | 05:00 | 33 |
-| 06:00 | 80 |
-| 07:00 | 153 |
-| 08:00 | 279 |
-| 09:00 | 297 |
-| 10:00 | 241 |
+| 06:00 | 82 |
+| 07:00 | 154 |
+| 08:00 | 281 |
+| 09:00 | 298 |
+| 10:00 | 242 |
 | 11:00 | 233 |
 | 12:00 | 261 |
-| 13:00 | 297 |
-| 14:00 | 265 |
+| 13:00 | 298 |
+| 14:00 | 266 |
 | 15:00 | 194 |
 | 16:00 | 117 |
 | 17:00 | 69 |
@@ -184,16 +184,16 @@ Based on **2822** closed issues.
 
 | Labels | Count |
 |--------|------:|
-| `completed` + `data request` | 2128 |
-| `data request` + `failed` | 359 |
-| `data request` + `invalid` | 191 |
+| `completed` + `data request` | 2132 |
+| `data request` + `failed` | 360 |
+| `data request` + `invalid` | 192 |
 | `data request` + `submitted` | 28 |
 | `aborted` + `data request` | 21 |
 | `completed` + `data request` + `failed` | 8 |
 | `enhancement` + `jenkins-migration` | 8 |
 | `data request` + `discussion` + `failed` | 4 |
 | `aborted` + `completed` + `data request` + `testsuite` | 3 |
-| `completed` + `data request` + `discussion` | 3 |
+| `aborted` + `completed` + `data request` | 3 |
 
 ## Issues Carrying the Most Labels
 
@@ -207,5 +207,5 @@ Based on **2822** closed issues.
 
 ---
 
-*Statistics generated by `extract_statistics.py` on 2026-09-23 00:41 UTC.*
+*Statistics generated by `extract_statistics.py` on 2026-09-24 00:43 UTC.*
 <!-- STATS:END -->
