@@ -87,6 +87,10 @@ def _get_json(url: str, params: dict):
             print(f"  Rate-limited — waiting {wait}s …")
             time.sleep(wait)
             continue
+        if r.status_code >= 500:
+            print(f"  HTTP {r.status_code} (server error) — retrying in 10s …")
+            time.sleep(10)
+            continue
         if r.status_code == 401:
             print("Authentication error — check GITHUB_TOKEN.")
             sys.exit(1)
