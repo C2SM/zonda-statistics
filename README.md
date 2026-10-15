@@ -8,7 +8,7 @@ Raw data backing this report is stored in [csv/](csv/); each table below is gene
 [MIT](LICENSE)
 
 <!-- STATS:START -->
-> **Generated:** 2026-10-14 12:25 UTC  
+> **Generated:** 2026-10-15 00:39 UTC  
 > **Repository:** [C2SM/zonda-request](https://github.com/C2SM/zonda-request)
 
 ---
@@ -17,12 +17,12 @@ Raw data backing this report is stored in [csv/](csv/); each table below is gene
 
 | Metric | Value |
 |--------|-------|
-| Total Issues | **3046** |
-| Open Issues | 81 (2.7%) |
-| Closed Issues | 2965 (97.3%) |
+| Total Issues | **3048** |
+| Open Issues | 40 (1.3%) |
+| Closed Issues | 3008 (98.7%) |
 | Unique Contributors | 416 |
 | Distinct Labels | 18 |
-| Total Label Assignments | 6052 |
+| Total Label Assignments | 6042 |
 | First Issue | 2025-05-05 |
 | Latest Issue | 2026-10-14 |
 
@@ -30,12 +30,12 @@ Raw data backing this report is stored in [csv/](csv/); each table below is gene
 
 | Label | Count | % of All Issues |
 |-------|------:|----------------:|
-| `data request` | 3000 | 98.5% |
-| `completed` | 2324 | 76.3% |
-| `failed` | 383 | 12.6% |
+| `data request` | 2996 | 98.3% |
+| `completed` | 2325 | 76.3% |
+| `failed` | 380 | 12.5% |
 | `invalid` | 209 | 6.9% |
-| `aborted` | 34 | 1.1% |
-| `submitted` | 31 | 1.0% |
+| `submitted` | 32 | 1.0% |
+| `aborted` | 29 | 1.0% |
 | `enhancement` | 22 | 0.7% |
 | `discussion` | 11 | 0.4% |
 | `jenkins-migration` | 10 | 0.3% |
@@ -55,25 +55,25 @@ Raw data backing this report is stored in [csv/](csv/); each table below is gene
 
 | State | Count | Percentage |
 |-------|------:|-----------:|
-| Closed | 2965 | 97.3% |
-| Open | 81 | 2.7% |
+| Closed | 3008 | 98.7% |
+| Open | 40 | 1.3% |
 
 ## Issue Resolution Time
 
-Based on **2965** closed issues.
+Based on **3008** closed issues.
 
 | Metric | Days |
 |--------|-----:|
-| Average | 7.4 |
+| Average | 7.5 |
 | Median | 7 |
 | Fastest | 0 |
 | Slowest | 185 |
 
 | SLA Bucket | Count | % of Closed |
 |------------|------:|------------:|
-| Closed within 1 day | 318 | 10.7% |
-| Closed within 7 days | 2605 | 87.9% |
-| Closed within 30 days | 2947 | 99.4% |
+| Closed within 1 day | 318 | 10.6% |
+| Closed within 7 days | 2647 | 88.0% |
+| Closed within 30 days | 2989 | 99.4% |
 
 ## Top Contributors (by Issues Opened)
 
@@ -84,8 +84,8 @@ Based on **2965** closed issues.
 | 3 | [mjaehn](https://github.com/mjaehn) | 59 | 1.9% |
 | 4 | [Ye-ChanJeong](https://github.com/Ye-ChanJeong) | 59 | 1.9% |
 | 5 | [jvicenciov](https://github.com/jvicenciov) | 54 | 1.8% |
-| 6 | [shirareznik](https://github.com/shirareznik) | 54 | 1.8% |
-| 7 | [AngeloCampanaleCMCC](https://github.com/AngeloCampanaleCMCC) | 53 | 1.7% |
+| 6 | [AngeloCampanaleCMCC](https://github.com/AngeloCampanaleCMCC) | 54 | 1.8% |
+| 7 | [shirareznik](https://github.com/shirareznik) | 54 | 1.8% |
 | 8 | [krishaizl](https://github.com/krishaizl) | 51 | 1.7% |
 | 9 | [criess374](https://github.com/criess374) | 51 | 1.7% |
 | 10 | [donuhr](https://github.com/donuhr) | 43 | 1.4% |
@@ -100,7 +100,7 @@ Based on **2965** closed issues.
 | Year | Count | % of Total |
 |------|------:|-----------:|
 | 2025 | 1081 | 35.5% |
-| 2026 | 1965 | 64.5% |
+| 2026 | 1967 | 64.5% |
 
 ## Issues per Month
 
@@ -108,7 +108,7 @@ Based on **2965** closed issues.
 
 | Metric | Value |
 |--------|-------|
-| Average Issues / Month | 169.2 |
+| Average Issues / Month | 169.3 |
 | Peak Month | 2026-06 — 404 issues |
 | Quietest Month | 2026-01 — 117 issues |
 | Months with Activity | 18 |
@@ -134,16 +134,16 @@ Based on **2965** closed issues.
 | 2026-07 | 197 |
 | 2026-08 | 186 |
 | 2026-09 | 142 |
-| 2026-10 | 159 |
+| 2026-10 | 161 |
 
 ## Issues by Day of Week (UTC)
 
 | Day | Count | % of Total |
 |-----|------:|-----------:|
 | Monday | 464 | 15.2% |
-| Tuesday | 614 | 20.2% |
-| Wednesday | 678 | 22.3% |
-| Thursday | 547 | 18.0% |
+| Tuesday | 614 | 20.1% |
+| Wednesday | 680 | 22.3% |
+| Thursday | 547 | 17.9% |
 | Friday | 409 | 13.4% |
 | Saturday | 147 | 4.8% |
 | Sunday | 187 | 6.1% |
@@ -170,9 +170,9 @@ Based on **2965** closed issues.
 | 13:00 | 304 |
 | 14:00 | 278 |
 | 15:00 | 201 |
-| 16:00 | 123 |
+| 16:00 | 124 |
 | 17:00 | 75 |
-| 18:00 | 82 |
+| 18:00 | 83 |
 | 19:00 | 64 |
 | 20:00 | 52 |
 | 21:00 | 33 |
@@ -185,28 +185,28 @@ Based on **2965** closed issues.
 
 | Labels | Count |
 |--------|------:|
-| `completed` + `data request` | 2297 |
+| `completed` + `data request` | 2298 |
 | `data request` + `failed` | 362 |
 | `data request` + `invalid` | 206 |
-| `data request` + `submitted` | 30 |
+| `data request` + `submitted` | 31 |
 | `aborted` + `data request` | 22 |
 | `completed` + `data request` + `failed` | 8 |
 | `enhancement` + `jenkins-migration` | 8 |
+| `completed` + `testsuite` | 6 |
 | `data request` + `discussion` + `failed` | 4 |
 | `completed` + `data request` + `discussion` | 4 |
-| `aborted` + `completed` + `data request` + `testsuite` | 3 |
 
 ## Issues Carrying the Most Labels
 
 | Issue | Title | Labels |
 |-------|-------|-------:|
-| [#1698](https://github.com/C2SM/zonda-request/issues/1698) | Testsuite MCH/ICON-CH2 | 5 |
-| [#1701](https://github.com/C2SM/zonda-request/issues/1701) | Testsuite Input Grid with Nesting | 5 |
 | [#414](https://github.com/C2SM/zonda-request/issues/414) | ICON-CAP | 4 |
 | [#564](https://github.com/C2SM/zonda-request/issues/564) | ICON-CH1 | 4 |
 | [#565](https://github.com/C2SM/zonda-request/issues/565) | ICON-CH2 | 4 |
+| [#3365](https://github.com/C2SM/zonda-request/issues/3365) | retrieve MCH-2 grid | 4 |
+| [#271](https://github.com/C2SM/zonda-request/issues/271) | ICON-7km | 3 |
 
 ---
 
-*Statistics generated by `extract_statistics.py` on 2026-10-14 12:25 UTC.*
+*Statistics generated by `extract_statistics.py` on 2026-10-15 00:39 UTC.*
 <!-- STATS:END -->
