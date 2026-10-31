@@ -1,9 +1,9 @@
 Label,Count
-data request,3114
-completed,2426
+data request,3125
+completed,2438
 failed,387
 invalid,224
-submitted,32
+submitted,31
 aborted,30
 enhancement,22
 discussion,11
